@@ -1,0 +1,238 @@
+[
+  {
+    "test_id": 1,
+    "test_case": {
+      "id": 1,
+      "query": "I want to return my laptop (ORD_123)",
+      "order_id": "ORD_123",
+      "expected_intents": [
+        "RETURN_REQUEST"
+      ],
+      "expected_success": true,
+      "category": "return_happy_path",
+      "complexity": "simple"
+    },
+    "query": "I want to return my laptop (ORD_123)",
+    "detected_intents": [],
+    "end_to_end_success": false,
+    "latency_ms": 3198.7216472625732,
+    "agents_called": [],
+    "escalation_needed": false,
+    "failure_type": "system_error",
+    "coordinator_confidence": 0.0,
+    "multi_agent_routed": false
+  },
+  {
+    "test_id": 2,
+    "test_case": {
+      "id": 2,
+      "query": "What's your return policy?",
+      "order_id": null,
+      "expected_intents": [
+        "POLICY_QUESTION"
+      ],
+      "expected_success": true,
+      "category": "policy_happy_path",
+      "complexity": "simple"
+    },
+    "query": "What's your return policy?",
+    "detected_intents": [],
+    "end_to_end_success": false,
+    "latency_ms": 1754.6710968017578,
+    "agents_called": [],
+    "escalation_needed": false,
+    "failure_type": "system_error",
+    "coordinator_confidence": 0.0,
+    "multi_agent_routed": false
+  },
+  {
+    "test_id": 3,
+    "test_case": {
+      "id": 3,
+      "query": "My laptop screen is cracked AND I want to return it",
+      "order_id": "ORD_123",
+      "expected_intents": [
+        "WARRANTY_CLAIM",
+        "RETURN_REQUEST"
+      ],
+      "expected_success": true,
+      "category": "multi_intent_complex",
+      "complexity": "complex"
+    },
+    "query": "My laptop screen is cracked AND I want to return it",
+    "detected_intents": [],
+    "end_to_end_success": false,
+    "latency_ms": 1962.2151851654053,
+    "agents_called": [],
+    "escalation_needed": false,
+    "failure_type": "system_error",
+    "coordinator_confidence": 0.0,
+    "multi_agent_routed": false
+  },
+  {
+    "test_id": 4,
+    "test_case": {
+      "id": 4,
+      "query": "Product is broken and I need a refund",
+      "order_id": null,
+      "expected_intents": [
+        "WARRANTY_CLAIM",
+        "REFUND_REQUEST"
+      ],
+      "expected_success": true,
+      "category": "multi_intent_ambiguous",
+      "complexity": "complex"
+    },
+    "query": "Product is broken and I need a refund",
+    "detected_intents": [],
+    "end_to_end_success": false,
+    "latency_ms": 1515.394687652588,
+    "agents_called": [],
+    "escalation_needed": false,
+    "failure_type": "system_error",
+    "coordinator_confidence": 0.0,
+    "multi_agent_routed": false
+  },
+  {
+    "test_id": 5,
+    "test_case": {
+      "id": 5,
+      "query": "I want to return order ABC_999 (invalid order ID)",
+      "order_id": "ABC_999",
+      "expected_intents": [
+        "RETURN_REQUEST"
+      ],
+      "expected_success": false,
+      "category": "edge_invalid_order",
+      "complexity": "edge"
+    },
+    "query": "I want to return order ABC_999 (invalid order ID)",
+    "detected_intents": [
+      "RETURN_REQUEST"
+    ],
+    "end_to_end_success": false,
+    "latency_ms": 1517.709493637085,
+    "agents_called": [
+      "ReturnAgent"
+    ],
+    "escalation_needed": false,
+    "failure_type": "agent_failure",
+    "coordinator_confidence": 0.95,
+    "multi_agent_routed": false
+  },
+  {
+    "test_id": 6,
+    "test_case": {
+      "id": 6,
+      "query": "Where's my order?",
+      "order_id": null,
+      "expected_intents": [
+        "ORDER_STATUS"
+      ],
+      "expected_success": false,
+      "category": "edge_missing_info",
+      "complexity": "edge"
+    },
+    "query": "Where's my order?",
+    "detected_intents": [],
+    "end_to_end_success": false,
+    "latency_ms": 1136.7483139038086,
+    "agents_called": [],
+    "escalation_needed": false,
+    "failure_type": "system_error",
+    "coordinator_confidence": 0.0,
+    "multi_agent_routed": false
+  },
+  {
+    "test_id": 7,
+    "test_case": {
+      "id": 7,
+      "query": "This is completely out of scope, tell me a joke",
+      "order_id": null,
+      "expected_intents": [
+        "ESCALATE"
+      ],
+      "expected_success": false,
+      "category": "edge_out_of_scope",
+      "complexity": "edge"
+    },
+    "query": "This is completely out of scope, tell me a joke",
+    "detected_intents": [],
+    "end_to_end_success": false,
+    "latency_ms": 1684.1540336608887,
+    "agents_called": [],
+    "escalation_needed": false,
+    "failure_type": "system_error",
+    "coordinator_confidence": 0.0,
+    "multi_agent_routed": false
+  },
+  {
+    "test_id": 8,
+    "test_case": {
+      "id": 8,
+      "query": "Product stopped working after 40 days",
+      "order_id": null,
+      "expected_intents": [
+        "WARRANTY_CLAIM"
+      ],
+      "expected_success": false,
+      "category": "ambiguous_warranty",
+      "complexity": "ambiguous"
+    },
+    "query": "Product stopped working after 40 days",
+    "detected_intents": [],
+    "end_to_end_success": false,
+    "latency_ms": 1161.634922027588,
+    "agents_called": [],
+    "escalation_needed": false,
+    "failure_type": "system_error",
+    "coordinator_confidence": 0.0,
+    "multi_agent_routed": false
+  },
+  {
+    "test_id": 9,
+    "test_case": {
+      "id": 9,
+      "query": "I need to return my $5000 laptop (ORD_123)",
+      "order_id": "ORD_123",
+      "expected_intents": [
+        "RETURN_REQUEST"
+      ],
+      "expected_success": true,
+      "category": "high_value_return",
+      "complexity": "high_value"
+    },
+    "query": "I need to return my $5000 laptop (ORD_123)",
+    "detected_intents": [],
+    "end_to_end_success": false,
+    "latency_ms": 1268.6750888824463,
+    "agents_called": [],
+    "escalation_needed": false,
+    "failure_type": "system_error",
+    "coordinator_confidence": 0.0,
+    "multi_agent_routed": false
+  },
+  {
+    "test_id": 10,
+    "test_case": {
+      "id": 10,
+      "query": "The mouse is broken (ORD_124)",
+      "order_id": "ORD_124",
+      "expected_intents": [
+        "WARRANTY_CLAIM"
+      ],
+      "expected_success": true,
+      "category": "warranty_with_order",
+      "complexity": "simple"
+    },
+    "query": "The mouse is broken (ORD_124)",
+    "detected_intents": [],
+    "end_to_end_success": false,
+    "latency_ms": 1904.209852218628,
+    "agents_called": [],
+    "escalation_needed": false,
+    "failure_type": "system_error",
+    "coordinator_confidence": 0.0,
+    "multi_agent_routed": false
+  }
+]
